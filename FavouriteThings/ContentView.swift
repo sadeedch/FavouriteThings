@@ -16,13 +16,14 @@ private let dateFormatter: DateFormatter = {
 }()
 
 struct ContentView: View {
+    @State private var title = "Favourite Things List"
     @Environment(\.managedObjectContext)
-    var viewContext   
+    var viewContext
  
     var body: some View {
         NavigationView {
-            MasterView()
-                .navigationBarTitle(Text("Master"))
+            MasterView(title: $title)
+                
                 .navigationBarItems(
                     leading: EditButton(),
                     trailing: Button(
@@ -40,6 +41,7 @@ struct ContentView: View {
 }
 
 struct MasterView: View {
+    @Binding var title: String
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Event.timestamp, ascending: true)], 
         animation: .default)
@@ -47,19 +49,29 @@ struct MasterView: View {
 
     @Environment(\.managedObjectContext)
     var viewContext
+    @Environment(\.editMode) var mode
 
     var body: some View {
-        List {
-            ForEach(events, id: \.self) { event in
-                NavigationLink(
-                    destination: DetailView(event: event)
-                ) {
-                    Text("\(event.timestamp!, formatter: dateFormatter)")
-                }
-            }.onDelete { indices in
-                self.events.delete(at: indices, from: self.viewContext)
+        VStack {
+            if mode?.wrappedValue == .active {
+                HStack {
+                    Text("✏️")
+                    TextField("Enter Title", text: $title)
+                           }
             }
-        }
+           
+            List {
+                ForEach(events, id: \.self) { event in
+                    NavigationLink(
+                        destination: DetailView(event: event)
+                    ) {
+                        Text("\(event.timestamp!, formatter: dateFormatter)")
+                    }
+                }.onDelete { indices in
+                    self.events.delete(at: indices, from: self.viewContext)
+                }
+            }
+        }.navigationBarTitle(mode?.wrappedValue == .active ? "" : title) 
     }
 }
 
