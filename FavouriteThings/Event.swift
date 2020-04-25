@@ -5,9 +5,10 @@
 //  Created by Sadeed Ahmed  on 22/4/20.
 //  Copyright © 2020 Sadeed Ahmad. All rights reserved.
 //
-
+/*
 import SwiftUI
 import CoreData
+
 
 extension Event {
     static func create(in managedObjectContext: NSManagedObjectContext){
@@ -39,3 +40,5 @@ extension Collection where Element == Event, Index == Int {
         }
     }
 }
+
+*/
