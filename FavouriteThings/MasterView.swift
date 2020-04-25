@@ -11,17 +11,17 @@ import SwiftUI
 
 // master view with image name and lcation of grounds
 struct MasterView: View {
-    @ObservedObject var groundList: ThingsList
+    @ObservedObject var thingsList: ThingsList
     @Environment(\.managedObjectContext) var viewContext
     @Environment(\.editMode) var mode
     var body: some View {
         List {
-            ForEach(groundList.things) { i in  // this loop iterate through list of all the grounds
+            ForEach(thingsList.things) { i in  // this loop iterate through list of all the grounds
                 //destination will take to detailview after clicking on a ground
                 NavigationLink (destination: DetailView(ground: i)){
-                        RowView(groundRow: i)
+                        RowView(thingsRow: i)
                 }
-            }.onDelete {indices in indices.forEach { self.groundList.things.remove(at: $0) }}
+            }.onDelete {indices in indices.forEach { self.thingsList.things.remove(at: $0) }}
         }
     }
 }

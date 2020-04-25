@@ -13,7 +13,7 @@ import SwiftUI
 
 // This Detail View shows the details of all the ground including its different properties.
 struct DetailView: View {
-    @ObservedObject public var ground: Things    //Singular instance of ground containing data
+    @ObservedObject var ground: Things    //Singular instance of ground containing data
     @Environment(\.managedObjectContext) var viewContext
     @Environment(\.editMode) var mode
     @State var tempImageURL: String = ""         // tempImageURL : a temporary variable to hold the url of image entered by user

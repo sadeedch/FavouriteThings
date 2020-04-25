@@ -12,11 +12,11 @@ import SwiftUI
 
 // content view to display the Navigation bar with the title.
 struct ContentView: View {
-    @ObservedObject var groundList = ThingsList()
+    @ObservedObject var thingsList = ThingsList()
     @Environment(\.managedObjectContext) var viewContext
     var body: some View {
        NavigationView {
-        MasterView(groundList: groundList)
+        MasterView(thingsList: thingsList)
             .navigationBarTitle("Sports Grounds List")
             /*  leading: EditButton() - specifies the edit button in the navigation bar on the left side
                 trailing: Button(action) - specifies the add button in the navigation bar on the right side
@@ -24,7 +24,7 @@ struct ContentView: View {
                 in action. */
             .navigationBarItems(leading: EditButton(),
             trailing: Button( action: {
-                    withAnimation { self.groundList.things.append(Things()) }
+                    withAnimation { self.thingsList.things.append(Things()) }
 //
 //                  withAnimation { self.groundList.things.append(Things("","Ground Name...", "Ground Location...","","","","" )) }
                 

@@ -35,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let t = try Data(contentsOf: fileURL)
         let decoder = JSONDecoder()
         let decodedModel = try decoder.decode(ThingsList.self, from: t)
-        print(decodedModel.things.first?.name ?? "No proddsdss")
+        print(decodedModel.things.first?.name ?? "No products")
         thingsList = decodedModel
         
         }
@@ -72,7 +72,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath
         
         //let contentView = ContentView(groundList: ThingsList)
-        let contentView = ContentView(groundList: thingsList).environment(\.managedObjectContext, context)
+        let contentView = ContentView(thingsList: thingsList).environment(\.managedObjectContext, context)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
