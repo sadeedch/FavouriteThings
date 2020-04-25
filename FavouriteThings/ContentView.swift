@@ -24,9 +24,10 @@ struct ContentView: View {
                 in action. */
             .navigationBarItems(leading: EditButton(),
             trailing: Button( action: {
-                    withAnimation { self.thingsList.things.append(Things()) }
+                  withAnimation { self.thingsList.things.append(Things("","Ground Name...", "Ground Location...","","","","", "", "", "" )) }
+                //withAnimation { self.thingsList.things.append(Things()) }
 //
-//                  withAnimation { self.groundList.things.append(Things("","Ground Name...", "Ground Location...","","","","" )) }
+//
                 
                 }) { Image(systemName: "plus") }
                 

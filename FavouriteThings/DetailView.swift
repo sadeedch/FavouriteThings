@@ -15,7 +15,6 @@ import SwiftUI
 struct DetailView: View {
     @ObservedObject var ground: Things    //Singular instance of ground containing data
     @Environment(\.managedObjectContext) var viewContext
-    @Environment(\.editMode) var mode
     @State var tempImageURL: String = ""         // tempImageURL : a temporary variable to hold the url of image entered by user
     var body: some View {
         
@@ -27,7 +26,7 @@ struct DetailView: View {
                     .font(Font.system(size: 20))
                 //  text field to enter the notes and the entered text is bounded to ground.notes
                 TextField("Enter your notes...", text: $ground.notes)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                .textFieldStyle(RoundedBorderTextFieldStyle())
             }.frame(width: 350, height: nil)
             
             
@@ -37,7 +36,7 @@ struct DetailView: View {
                     .font(Font.system(size: 20))
                 /*  text field to enter the url of new image for a ground and the entered url is bounded to $tempImageURL.
                     this temporary value is then sent to the url property of class ground. */
-                TextField("Pase the image URL here", text: $tempImageURL, onCommit: { self.ground.url = self.tempImageURL
+                TextField("Paste the image URL here", text: $tempImageURL, onCommit: { self.ground.url = self.tempImageURL
                     }).textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 // (ground.image) shows the image of each ground
@@ -49,10 +48,10 @@ struct DetailView: View {
             // Vertical Stack to show the Ground name and location.
             VStack() {
                 
-                TextField("Ground name...", text: $ground.name)
+                TextField("Item name...", text: $ground.name)
                     .font(.largeTitle)
                 
-                TextField("Ground location...", text: $ground.location)
+                TextField("Location...", text: $ground.location)
                     .font(.subheadline)
                     .padding(.bottom)
                     
@@ -62,19 +61,20 @@ struct DetailView: View {
             
             VStack(){
                 HStack {                    // Horizontal stack to show the capcaity of a ground
-                    Text("Capacity:")
-                        .fontWeight(.heavy)
-                    TextField("Ground capacity...", text: $ground.capacity)
+                    TextField("Capacity..", text: $ground.title_field1)
+                    
+                    TextField("Enter capacity...", text: $ground.capacity)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     }
                 HStack {                    // Horizontal stack to show the opening date of a ground
-                    Text("Opened:")
-                        .fontWeight(.heavy)
-                    TextField("Ground opening date...", text: $ground.opened)
+                    TextField("Opened..", text: $ground.title_field2)
+                    TextField("Enter opening date...", text: $ground.opened)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     }
                 HStack {                    // Horizontal stack to show the owner of a ground
-                    Text("Owner:")
-                        .fontWeight(.heavy)
-                    TextField("Ground owner...", text: $ground.owner)
+                    TextField("Owner..", text: $ground.title_field3)
+                    TextField("Enter owner", text: $ground.owner)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                     }
             }.frame(width: 300, alignment: .leading)
         }
