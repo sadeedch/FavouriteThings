@@ -22,7 +22,6 @@ func downloadedImage (_ img: String)-> Image {
  */
 guard let imageURL = URL(string: img )
     else {
-        print ("URL is invalid. Insert correct URL ")
         return (Image("default"))
 }
 

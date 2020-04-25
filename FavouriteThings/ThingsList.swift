@@ -13,30 +13,30 @@ import SwiftUI
 
 class ThingsList: ObservableObject, Identifiable, Codable {
     @Published var things:  [Things]
-    //@Published var title: String
+    @Published var title: String
     
     
     enum CodingKeys : String, CodingKey {
               case things
-              //case title
+              case title
               
           }
     init() {
         things = [Things]()
-        //title = "My Favourite Things"
+        title = "Favourite Things"
     }
     
    
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.things = try container.decode([Things].self, forKey: .things)
-       // self.title = try container.decode(String.self, forKey: .title)
+        self.title = try container.decode(String.self, forKey: .title)
     }
     
     func encode (to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(things, forKey: .things)
-       // try container.encode(title, forKey: .title)
+        try container.encode(title, forKey: .title)
     }
     
     

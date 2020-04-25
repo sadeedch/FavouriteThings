@@ -17,7 +17,7 @@ struct ContentView: View {
     var body: some View {
        NavigationView {
         MasterView(thingsList: thingsList)
-            .navigationBarTitle("Sports Grounds List")
+           
             /*  leading: EditButton() - specifies the edit button in the navigation bar on the left side
                 trailing: Button(action) - specifies the add button in the navigation bar on the right side
                 If the user clicks on add button, then it appends the ground array to add a new ground entry which is specified

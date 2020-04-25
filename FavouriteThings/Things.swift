@@ -6,6 +6,7 @@
 //  Copyright © 2020 Sadeed Ahmad. All rights reserved.
 //
 
+
 import Foundation
 import SwiftUI
 
@@ -80,15 +81,5 @@ class Things: ObservableObject, Identifiable, Codable {
         notes = ""
 
     }
-    
-//    init(_ groundURL: String, _ groundName: String, _ groundLocation: String, _ groundCapacity: String, _ groundOpened: String, _ groundOwner: String, _ groundNotes: String) {
-//        url = groundURL
-//        name = groundName
-//        location = groundLocation
-//        capacity = groundCapacity
-//        opened = groundOpened
-//        owner = groundOwner
-//        notes = groundNotes
-//
-//    }
+
 }
