@@ -10,11 +10,12 @@
 import Foundation
 import SwiftUI
 
-/// This class is a type to represent a particular thing in the favourite things collection
-
+/// This class is a type to represent a particular thing in the favourite things collection.
+/// It includes image, name, location, capacity, opening date, owner, notes and 3 text fields
 class Things: ObservableObject, Identifiable, Codable {
     
-    @Published var url: String?              // String which may have the url to download the ground image.s
+    // String which may have the url to download the thing image.
+    @Published var url: String?
     var image: Image {
         if let img = url {
         // it tries to download the image from the url by applying downloadedImage function specified in the Image.swift file.
@@ -31,13 +32,12 @@ class Things: ObservableObject, Identifiable, Codable {
     @Published var opened: String           // String containing the opened date of the ground
     @Published var owner: String            // String containing the owner of the ground
     @Published var notes: String            // String containing the notes of the ground
-   
-    @Published var title_field1: String
-    @Published var title_field2: String
-    @Published var title_field3: String
+    @Published var title_field1: String     // String containing the text_field1  of the ground
+    @Published var title_field2: String     // String containing the text_field2  of the ground
+    @Published var title_field3: String     // String containing the text_field3  of the ground
     
     
-    // The keys for JSON encoding
+    /// The keys for JSON encoding and decoding
     enum CodingKeys : String, CodingKey {
         case url
         case name
@@ -49,9 +49,36 @@ class Things: ObservableObject, Identifiable, Codable {
         case title_field1
         case title_field2
         case title_field3
-        
     }
     
+    
+    /// initilizer of the Things class.
+    /// - Parameters:
+    ///   - groundURL: url of the ground image (String)
+    ///   - groundName: name of a particualr ground (String)
+    ///   - groundLocation: location of a ground (String)
+    ///   - groundCapacity: capacity of a ground (String)
+    ///   - groundOpened: opening date of a ground (String)
+    ///   - groundOwner: owner of the ground (String)
+    ///   - groundNotes: notes for a particular ground (String)
+    ///   - groundTitle_Field1: title field 1 for a ground (String)
+    ///   - groundTitle_Field2: title field 2 for a ground (String)
+    ///   - groundTitle_Field3: title field 3 for a ground (String)
+    init(_ groundURL: String,_ groundName: String, _ groundLocation: String, _ groundCapacity: String, _ groundOpened: String, _ groundOwner: String, _ groundNotes: String, _ groundTitle_Field1: String,_ groundTitle_Field2: String,_ groundTitle_Field3: String ) {
+           url = groundURL
+           name = groundName
+           location = groundLocation
+           capacity = groundCapacity
+           opened = groundOpened
+           owner = groundOwner
+           notes = groundNotes
+           title_field1 = groundTitle_Field1
+           title_field2 = groundTitle_Field2
+           title_field3 = groundTitle_Field3
+    }
+    
+    /// Decoding the data
+    /// - Parameter decoder: object decoder being used to decode the data
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.url = try container.decode(String.self, forKey: .url)
@@ -66,6 +93,8 @@ class Things: ObservableObject, Identifiable, Codable {
         self.title_field3 = try container.decode(String.self, forKey: .title_field3)
     }
     
+    /// Encoding the data
+    /// - Parameter encoder: object encoder being used to encode the data
     func encode (to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(url, forKey: .url)
@@ -79,22 +108,4 @@ class Things: ObservableObject, Identifiable, Codable {
         try container.encode(title_field2, forKey: .title_field2)
         try container.encode(title_field3, forKey: .title_field3)
     }
-    
-    // initilizer of the Things class.
-   
-    
-    init(_ groundURL: String,_ groundName: String, _ groundLocation: String, _ groundCapacity: String, _ groundOpened: String, _ groundOwner: String, _ groundNotes: String, _ groundTitle_Field1: String,_ groundTitle_Field2: String,_ groundTitle_Field3: String ) {
-        url = groundURL
-        name = groundName
-        location = groundLocation
-        capacity = groundCapacity
-        opened = groundOpened
-        owner = groundOwner
-        notes = groundNotes
-        title_field1 = groundTitle_Field1
-        title_field2 = groundTitle_Field2
-        title_field3 = groundTitle_Field3
-        
-    }
-
 }
