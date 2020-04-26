@@ -10,10 +10,9 @@ import SwiftUI
 
 
 
-// content view to display the Navigation bar with the title.
+/// content view to display the MasterView to be displayed
 struct ContentView: View {
     @ObservedObject var thingsList = ThingsList()
-    @Environment(\.managedObjectContext) var viewContext
     var body: some View {
        NavigationView {
         MasterView(thingsList: thingsList)
@@ -25,14 +24,7 @@ struct ContentView: View {
             .navigationBarItems(leading: EditButton(),
             trailing: Button( action: {
                   withAnimation { self.thingsList.things.append(Things("","Ground Name...", "Ground Location...","","","","", "", "", "" )) }
-                //withAnimation { self.thingsList.things.append(Things()) }
-//
-//
-                
-                }) { Image(systemName: "plus") }
-                
-        )
-    
+            }){ Image(systemName: "plus")})
         }
     }
 }
