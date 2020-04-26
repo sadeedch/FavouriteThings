@@ -18,11 +18,11 @@
 		E20818B92450397500E2F16D /* FavouriteThingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20818B82450397500E2F16D /* FavouriteThingsTests.swift */; };
 		E20818C42450397500E2F16D /* FavouriteThingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20818C32450397500E2F16D /* FavouriteThingsUITests.swift */; };
 		E20818D22450458D00E2F16D /* Things.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20818D12450458D00E2F16D /* Things.swift */; };
-		E20818D42450460E00E2F16D /* ThingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20818D32450460E00E2F16D /* ThingsList.swift */; };
 		E20818D62450465000E2F16D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20818D52450465000E2F16D /* Image.swift */; };
 		E20818D82450A9E100E2F16D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20818D72450A9E100E2F16D /* DetailView.swift */; };
 		E20818DA2450A9EE00E2F16D /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20818D92450A9EE00E2F16D /* MasterView.swift */; };
 		E20818DC2450A9F700E2F16D /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20818DB2450A9F700E2F16D /* RowView.swift */; };
+		E21862622455B3B9007F0319 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21862612455B3B9007F0319 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,11 +60,11 @@
 		E20818C32450397500E2F16D /* FavouriteThingsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteThingsUITests.swift; sourceTree = "<group>"; };
 		E20818C52450397500E2F16D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E20818D12450458D00E2F16D /* Things.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Things.swift; sourceTree = "<group>"; };
-		E20818D32450460E00E2F16D /* ThingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsList.swift; sourceTree = "<group>"; };
 		E20818D52450465000E2F16D /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		E20818D72450A9E100E2F16D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		E20818D92450A9EE00E2F16D /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
 		E20818DB2450A9F700E2F16D /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		E21862612455B3B9007F0319 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,13 +92,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E200BB452454B1D000ECD91A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		E200BB462454B1DA00ECD91A /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,12 +128,11 @@
 			children = (
 				E208189C2450397300E2F16D /* AppDelegate.swift */,
 				E20818A12450397300E2F16D /* SceneDelegate.swift */,
-				E20818D52450465000E2F16D /* Image.swift */,
-				E20818D32450460E00E2F16D /* ThingsList.swift */,
 				E20818D12450458D00E2F16D /* Things.swift */,
+				E21862612455B3B9007F0319 /* ViewModel.swift */,
+				E20818D52450465000E2F16D /* Image.swift */,
 				E200BB492454B3AA00ECD91A /* Event.swift */,
 				E200BB462454B1DA00ECD91A /* View */,
-				E200BB452454B1D000ECD91A /* Model */,
 				E20818A72450397500E2F16D /* Assets.xcassets */,
 				E20818AC2450397500E2F16D /* LaunchScreen.storyboard */,
 				E20818AF2450397500E2F16D /* Info.plist */,
@@ -314,9 +306,9 @@
 				E20818A02450397300E2F16D /* FavouriteThings.xcdatamodeld in Sources */,
 				E208189D2450397300E2F16D /* AppDelegate.swift in Sources */,
 				E20818D22450458D00E2F16D /* Things.swift in Sources */,
-				E20818D42450460E00E2F16D /* ThingsList.swift in Sources */,
 				E20818DC2450A9F700E2F16D /* RowView.swift in Sources */,
 				E20818DA2450A9EE00E2F16D /* MasterView.swift in Sources */,
+				E21862622455B3B9007F0319 /* ViewModel.swift in Sources */,
 				E20818A22450397300E2F16D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

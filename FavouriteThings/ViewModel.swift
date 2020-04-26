@@ -1,10 +1,11 @@
 //
-//  ThingsList.swift
+//  ViewModel.swift
 //  FavouriteThings
 //
 //  Created by Sadeed Ahmed  on 22/4/20.
 //  Copyright © 2020 Sadeed Ahmad. All rights reserved.
 //
+
 
 import Foundation
 import SwiftUI
@@ -23,8 +24,8 @@ class ThingsList: ObservableObject, Identifiable, Codable {
     
     /// Initializer of class ThingsList with default data of three things and default title of the app.
     init() {
-        things = [Things("https://www.abc.net.au/news/image/5175326-3x2-940x627.jpg","MCG","Melbourne", "100024", "1853", "Melbourne Cricket Club", "", "Capacity", "Opened", "Owner"), Things("https://assets.atdw-online.com.au/images/58eb0e41d72e0aa26d1b765a8447629f.jpeg?rect=127%2c0%2c2053%2c1540&w=1200","Gabba","Brisbane", "42000", "1895", "Stadiums QLD", "", "Capacity", "Opened", "Owner"),
-            Things("https://www.austadiums.com/stadiums/photos/Sydney-Cricket-Ground.jpg","SCG","Sydney", "48601","1848","Sydney Cricket Ground Trust", "","Capacity", "Opened", "Owner")]
+        things = [Things("https://www.abc.net.au/news/image/5175326-3x2-940x627.jpg","MCG","Melbourne", "100024", "1853", "Melbourne Cricket Club", "Home of Cricket", "Capacity", "Opened", "Owner"), Things("https://assets.atdw-online.com.au/images/58eb0e41d72e0aa26d1b765a8447629f.jpeg?rect=127%2c0%2c2053%2c1540&w=1200","Gabba","Brisbane", "42000", "1895", "Stadiums QLD", "Best in queensland", "Capacity", "Opened", "Owner"),
+            Things("https://www.austadiums.com/stadiums/photos/Sydney-Cricket-Ground.jpg","SCG","Sydney", "48601","1848","Sydney Cricket Ground Trust", "Iconic cricket ground","Capacity", "Opened", "Owner")]
         title = "Favourite Grounds"
     }
     
@@ -44,3 +45,4 @@ class ThingsList: ObservableObject, Identifiable, Codable {
         try container.encode(title, forKey: .title)
     }
 }
+

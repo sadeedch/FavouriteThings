@@ -33,7 +33,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let t = try Data(contentsOf: fileURL)
         let decoder = JSONDecoder()
         let decodedModel = try decoder.decode(ThingsList.self, from: t)
-        print(decodedModel.things.first?.name ?? "No products")
         thingsList = decodedModel
         }
         catch {
