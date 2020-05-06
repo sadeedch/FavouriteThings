@@ -26,22 +26,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        
-       
-        /// Do catch block to decode the JSON data and showing error if unable to decode the data
-        do {
-        let t = try Data(contentsOf: fileURL)
-        let decoder = JSONDecoder()
-        let decodedModel = try decoder.decode(ThingsList.self, from: t)
-        thingsList = decodedModel
-        }
-        catch {
-            print("Unable to write File \(fileURL.path) \(error)")
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                fatalError("No app deleagate ")
         }
         
+        let context = appDelegate.persistentContainer.viewContext
+        
+//        /// Do catch block to decode the JSON data and showing error if unable to decode the data
+//        do {
+//        let t = try Data(contentsOf: fileURL)
+//        let decoder = JSONDecoder()
+//        let decodedModel = try decoder.decode(ThingsList.self, from: t)
+//        thingsList = decodedModel
+//        }
+//        catch {
+//            print("Unable to write File \(fileURL.path) \(error)")
+//        }
+//
 
         // Get the managed object context from the shared persistent container
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath
         let contentView = ContentView(thingsList: thingsList).environment(\.managedObjectContext, context)
@@ -84,15 +88,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Save changes in the application's managed object context when the application transitions to the background.
         
-        /// Do catch block to encode the JSON data and showing error if unable to encode the data
-        do {
-            let json = JSONEncoder()
-            let data = try json.encode(thingsList)
-            try data.write(to: fileURL)
-            print("Successfully wrote file \(fileURL.path)")
-        } catch {
-            print("Unable to write File \(fileURL.path) \(error)")
-        }
+//        /// Do catch block to encode the JSON data and showing error if unable to encode the data
+//        do {
+//            let json = JSONEncoder()
+//            let data = try json.encode(thingsList)
+//            try data.write(to: fileURL)
+//            print("Successfully wrote file \(fileURL.path)")
+//        } catch {
+//            print("Unable to write File \(fileURL.path) \(error)")
+//        }
         
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }

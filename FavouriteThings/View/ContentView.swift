@@ -12,6 +12,8 @@ import SwiftUI
 
 /// content view to display the MasterView to be displayed
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var context 
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \ThingsList.title, ascending: true)], animation: .default) var thingsList: FetchedResults<FaveGames>
     @ObservedObject var thingsList = ThingsList()
     var body: some View {
        NavigationView {

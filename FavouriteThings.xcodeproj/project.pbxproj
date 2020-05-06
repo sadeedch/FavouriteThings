@@ -23,6 +23,11 @@
 		E20818DA2450A9EE00E2F16D /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20818D92450A9EE00E2F16D /* MasterView.swift */; };
 		E20818DC2450A9F700E2F16D /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20818DB2450A9F700E2F16D /* RowView.swift */; };
 		E21862622455B3B9007F0319 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21862612455B3B9007F0319 /* ViewModel.swift */; };
+		E2AA213B245F63750050993D /* Things+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA2137245F63750050993D /* Things+CoreDataClass.swift */; };
+		E2AA213C245F63750050993D /* Things+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA2138245F63750050993D /* Things+CoreDataProperties.swift */; };
+		E2AA213D245F63750050993D /* ThingsList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA2139245F63750050993D /* ThingsList+CoreDataClass.swift */; };
+		E2AA213E245F63750050993D /* ThingsList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AA213A245F63750050993D /* ThingsList+CoreDataProperties.swift */; };
+		E2AA2141245F6A490050993D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2AA2140245F6A490050993D /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +70,11 @@
 		E20818D92450A9EE00E2F16D /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
 		E20818DB2450A9F700E2F16D /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		E21862612455B3B9007F0319 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		E2AA2137245F63750050993D /* Things+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Things+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E2AA2138245F63750050993D /* Things+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Things+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E2AA2139245F63750050993D /* ThingsList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThingsList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E2AA213A245F63750050993D /* ThingsList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThingsList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E2AA2140245F6A490050993D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2AA2141245F6A490050993D /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,10 +117,15 @@
 		E20818902450397300E2F16D = {
 			isa = PBXGroup;
 			children = (
+				E2AA2137245F63750050993D /* Things+CoreDataClass.swift */,
+				E2AA2138245F63750050993D /* Things+CoreDataProperties.swift */,
+				E2AA2139245F63750050993D /* ThingsList+CoreDataClass.swift */,
+				E2AA213A245F63750050993D /* ThingsList+CoreDataProperties.swift */,
 				E208189B2450397300E2F16D /* FavouriteThings */,
 				E20818B72450397500E2F16D /* FavouriteThingsTests */,
 				E20818C22450397500E2F16D /* FavouriteThingsUITests */,
 				E208189A2450397300E2F16D /* Products */,
+				E2AA213F245F6A490050993D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +182,14 @@
 				E20818C52450397500E2F16D /* Info.plist */,
 			);
 			path = FavouriteThingsUITests;
+			sourceTree = "<group>";
+		};
+		E2AA213F245F6A490050993D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2AA2140245F6A490050993D /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,17 +323,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2AA213D245F63750050993D /* ThingsList+CoreDataClass.swift in Sources */,
 				E20818D82450A9E100E2F16D /* DetailView.swift in Sources */,
 				E200BB4A2454B3AA00ECD91A /* Event.swift in Sources */,
+				E2AA213B245F63750050993D /* Things+CoreDataClass.swift in Sources */,
 				E20818D62450465000E2F16D /* Image.swift in Sources */,
 				E20818A62450397300E2F16D /* ContentView.swift in Sources */,
 				E20818A02450397300E2F16D /* FavouriteThings.xcdatamodeld in Sources */,
+				E2AA213E245F63750050993D /* ThingsList+CoreDataProperties.swift in Sources */,
 				E208189D2450397300E2F16D /* AppDelegate.swift in Sources */,
 				E20818D22450458D00E2F16D /* Things.swift in Sources */,
 				E20818DC2450A9F700E2F16D /* RowView.swift in Sources */,
 				E20818DA2450A9EE00E2F16D /* MasterView.swift in Sources */,
 				E21862622455B3B9007F0319 /* ViewModel.swift in Sources */,
 				E20818A22450397300E2F16D /* SceneDelegate.swift in Sources */,
+				E2AA213C245F63750050993D /* Things+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

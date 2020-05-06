@@ -11,6 +11,7 @@ import SwiftUI
 
 /// master view with image name and lcation of grounds.
 struct MasterView: View {
+    @Environment(\.managedObjectContext) var context 
     @ObservedObject var thingsList: ThingsList
     @Environment(\.editMode) var mode
     var body: some View {

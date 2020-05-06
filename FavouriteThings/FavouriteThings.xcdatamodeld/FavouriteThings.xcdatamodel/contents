@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Event" representedClassName="Event" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Things" representedClassName="Things" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString=""/>
+        <relationship name="things" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ThingsList" inverseName="things" inverseEntity="ThingsList"/>
+        <userInfo/>
+    </entity>
+    <entity name="ThingsList" representedClassName="ThingsList" syncable="YES" codeGenerationType="class">
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="things" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Things" inverseName="things" inverseEntity="Things"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="Things" positionX="-1075.875" positionY="110.85546875" width="128" height="58"/>
+        <element name="ThingsList" positionX="-1399.28125" positionY="-3.73828125" width="128" height="73"/>
     </elements>
 </model>
